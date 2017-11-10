@@ -1,8 +1,8 @@
 .box {
 	height: 50px;
 	width: 50px;
-	border-style: solid;
-	border-color: blue;
+	border-style: none;
 	display: inline-block;
+	margin-top: -5px;
 }
 
