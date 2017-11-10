@@ -18,18 +18,18 @@ export class AppComponent {
 
 	thing = "red"
 
-	bg = function(){
-		var a = ['a','b','c','d','e','f',0,1,2,3,4,5,6,7,8,9];
-		var colors = []
-		for (var i=0; i< 10; i++){
-			var color = "#"
-			for (var b = 0; b < 6; b++){
-				color += a[Math.floor(Math.random()*16)]
-				colors.push(color)
+	bg = (function(){
+			var a = ['a','b','c','d','e','f',0,1,2,3,4,5,6,7,8,9];
+			var colors = []
+			for (var i=0; i< 10; i++){
+				var color = "#"
+				for (var b = 0; b < 6; b++){
+					color += a[Math.floor(Math.random()*16)]
+					colors.push(color)
+				}
 			}
-		}
-		return colors
-	}
+			return colors
+		}())
 
 	// const b = ['AliceBlue', 'Aqua', 'Bisque', 'Black', 'Brown', 'CadetBlue', 'Coral,' 'Cornsilk', 'DarkBlue', 'DarkGray', 'DarkOrchid', 'DarkSalmon', 'DarkSeaGreen', 'DarkSlateGray', 'DodgerBlue', 'FireBrick', 'ForestGreen', 'GoldenRod', 'GreenYellow', 'Green', 'Ingigo,' 'LawnGreen', 'LightCyan', 'LightGray', 'Linen', 'MediumPurple', 'MedidumSpringGreen', 'MediumVioletRed', 'Navy', 'OliveDrab', 'PaleTurqoise', 'PaleVioletRed', 'PaleGreen', 'Yellow']
 
