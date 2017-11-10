@@ -8,18 +8,18 @@
 
 <h2> Retro Barcode Generator </h2>
 
-<div class="bar" *ngFor="let color of list">
-    <div class="box" style="background-color=color">.</div>
-</div>  
 
-<div class="box" style="background-color=color">.</div>
-<div class="box" style="background-color={{generate()}}">.</div>
+===========================================
+<p></p>
 
+<span *ngFor='let color of bg[0]' [ngStyle]="{'background-color': color }">....</span>
 
+<p>Hello</p>
 
+<span *ngFor='let color of bg()' [ngStyle]="{'background-color': color }">random</span>
 
-
-
+<p></p>
+===========================================
 
 <h2> Email Assignment </h2>
 <table>
