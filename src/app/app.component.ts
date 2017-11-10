@@ -25,9 +25,10 @@ export class AppComponent {
 				var color = "#"
 				for (var b = 0; b < 6; b++){
 					color += a[Math.floor(Math.random()*16)]
-					colors.push(color)
 				}
+				colors.push(color)
 			}
+			console.log(colors)
 			return colors
 		}())
 

@@ -12,11 +12,7 @@
 ===========================================
 <p></p>
 
-<div [ngStyle]="{'background-color': thing }">....</div>
-
-<p>Hello</p>
-
-<span *ngFor='let color of bg()' [ngStyle]="{'background-color': color }">random</span>
+<div class="box" *ngFor='let color of bg' [ngStyle]="{'background-color': color }"></div>
 
 <p></p>
 ===========================================
