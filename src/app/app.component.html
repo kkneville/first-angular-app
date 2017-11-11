@@ -4,22 +4,31 @@
   <h2>{{subtitle}}</h2>
 </div>
 
+<h2>Forms</h2>
 
-<h2>US Time Zone Display</h2>
+<form (submit)="onSubmit()">
+  <input type="text" name="firstname" 
+  [(ngModel)]='user.firstname'>
+  <input type="text" name="lastname"
+  [(ngModel)]='user.lastname'>
+  <input type="submit" value='Submit'>
+</form>
+
+<p> User: {{ user | json }} </p>
+
+ +++++++++++++++++++++++++++++++++++++++++++++
+<h2> Switchboard </h2>
 
 
-<button class="zone" (click)="gmt = zones.beijing" [ngClass]='{selected: gmt === zones.beijing}'>Beijing</button> |
-<button class="zone" (click)="gmt = zones.tokyo" [ngClass]='{selected: gmt === zones.tokyo}'>Tokyo</button> |
-<button class="zone" (click)="gmt = zones.dallas" [ngClass]='{selected: gmt === zones.dallas}'>Dallas</button> |
-<button class="zone" (click)="gmt = zones.newyork" [ngClass]='{selected: gmt === zones.newyork}'>New York</button> |
-<button class="zone" (click)="gmt = zones.pretoria" [ngClass]='{selected: gmt === zones.pretoria}'>Pretoria</button> |
-<br>
-<br>
-<button class="zone" (click)="gmt = zones.istanbul" [ngClass]='{selected: gmt === zones.istanbul}'>Istanbul</button> |
-<button class="zone" (click)="gmt = zones.newdelhi" [ngClass]='{selected: gmt === zones.newdelhi}'>New Delhi</button> |
-<button class="zone" (click)="gmt = zones.bangkok" [ngClass]='{selected: gmt === zones.bangkok}'>Bangkok</button> |
-<button class="zone" (click)="gmt = zones.melburne" [ngClass]='{selected: gmt === zones.melburne}'>Melburne</button> |
-<button class="zone" (click)="gmt = zones.wellington" [ngClass]='{selected: gmt === zones.wellington}'>Wellington</button> |
+<div class="box switch" *ngFor="let one of buttons; let i = index" (click)="flip(i)" [ngClass]="{off: one.status == 'off', on: one.status == 'on'}">{{ one.status }}</div> 
+
+
+
+<p>......................................................................................</p>
+<h2> Time Zones Display </h2>
+
+<button class="zone" *ngFor="let one of cities" (click)="gmt = one.gmt" [ngClass]='{selected: gmt === one.gmt}'>{{ one.name }}</button>
+
 <br>
 <br>
 <button (click)="gmt = zones.grenwich">Reset to GMT</button>
@@ -53,6 +62,9 @@
 
 <p></p>
 
+<!-- <button (click)="thing()">Shuffle</button> -->
+
+<p></p>
 ===========================================
 
 <h2> Email Table </h2>

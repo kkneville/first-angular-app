@@ -1,5 +1,5 @@
 import { Component, LOCALE_ID } from '@angular/core';
-import { DatePine } from '@angular/common';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -32,7 +32,7 @@ export class AppComponent {
 			return colors
 		}())
 
-	thing = function(){
+	thing(){
 			var a = ['a','b','c','d','e','f',0,1,2,3,4,5,6,7,8,9];
 			var color = "#"
 			for (var b = 0; b < 6; b++){
@@ -53,7 +53,6 @@ export class AppComponent {
 
 	zones = {
 		tokyo: '+0900',
-		paris: '+0000',
 		dallas: '-0600',
 		manila: '+0800',
 		beijing: '+0800',
@@ -67,13 +66,62 @@ export class AppComponent {
 		wellington: '+1300',
 	}
 
+
+	cities = [
+		{name: "Tokyo", gmt: '+0900'}, 
+		{name: 'Dallas', gmt: '-0600'},
+		{name: 'Beijing', gmt: '+0800'},
+		{name: 'Bangkok', gmt: '+0700'},
+		{name: 'New York', gmt: '-0400'},
+		{name: 'Pretoria', gmt: '+0200'},
+		{name: 'Istanbul', gmt: '+0300'},
+		{name: 'New Delhi', gmt: '+0530'},
+		{name: 'Melburne', gmt: '+1000'},
+		{name: 'Grenwich', gmt: '+0000'},
+		{name: 'Wellington', gmt: '+1300'},
+	]
+
 	gmt = this.zones.grenwich
 
 	today = (function(){
 			return Date.now()
 		})()
-	
+
+	buttons = [
+		{ status: 'off'  },
+		{ status: 'on' },
+		{ status: 'off' },
+		{ status: 'on' },
+		{ status: 'off' },
+		{ status: 'on' },
+		{ status: 'off' },
+		{ status: 'on' },
+		{ status: 'off' },
+		{ status: 'on' },	
+	]	
+
+	flip = function(index){
+		if (this.buttons[index].status == "on"){
+			this.buttons[index].status = "off"
+		}
+		else if (this.buttons[index].status == "off"){
+			this.buttons[index].status = "on"
+		}
+	}
+
+	user = {
+		firstname: "",
+		lastname: ""
+	}
+
+	onSubmit(){
+		console.log("onSubmit")
+	}
+
+		
 }
+
+
 
 	
 
