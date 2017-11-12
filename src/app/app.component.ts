@@ -135,11 +135,17 @@ export class AppComponent {
 
 	members = []
 
+	response = ""
+
 	onSub(){
 		this.members.push(this.member);
+		this.response = `Thank you for registering with us, ${this.member.firstname}. We will send a confirmation email to ${this.member.email}.`
 		this.member = new Member
 		console.log(this.members)
+
 	}
+
+
 
 	states = [
 		"New York",

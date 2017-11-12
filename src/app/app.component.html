@@ -6,6 +6,7 @@
 
 <h2>Registration Form </h2>
 
+<p *ngIf="response">{{ response }}</p> 
 
 <form #formData='ngForm' (submit)="onSub()">
 
