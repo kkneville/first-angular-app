@@ -1,5 +1,6 @@
 import { Component, LOCALE_ID } from '@angular/core';
 import { DatePipe } from '@angular/common';
+import { Member } from './member';
 
 @Component({
   selector: 'app-root',
@@ -77,7 +78,6 @@ export class AppComponent {
 		{name: 'Istanbul', gmt: '+0300'},
 		{name: 'New Delhi', gmt: '+0530'},
 		{name: 'Melburne', gmt: '+1000'},
-		{name: 'Grenwich', gmt: '+0000'},
 		{name: 'Wellington', gmt: '+1300'},
 	]
 
@@ -114,9 +114,43 @@ export class AppComponent {
 		lastname: ""
 	}
 
+	users = []
+
 	onSubmit(){
 		console.log("onSubmit")
+		console.log(this.user)
+		this.users.push(this.user)
+		this.user = {
+			firstname: "",
+			lastname: ""
+		}
 	}
+
+	clearUsers(){
+		this.users = []
+	}
+
+	member = new Member()
+
+	members = []
+
+	onSub(){
+		this.members.push(this.member);
+		this.member = new Member
+		console.log(this.members)
+	}
+
+	states = [
+		"New York",
+		"New Jersey",
+		"Texas",
+		"California",
+		"Colorado",
+		"New Mexico",
+		"Oregon",
+		"Washington"
+	]
+
 
 		
 }

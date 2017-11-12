@@ -23,7 +23,7 @@
 	color: white;
 	padding: 10px;
 	border-radius: 5px;
-	margin-left: 5px;
+	margin: 5px;
 }
 
 .selected {
@@ -40,3 +40,12 @@
 .on {
 	background-color: green;
 }
+
+.ng-invalid {
+	color: red;
+}
+
+.ng-valid {
+	color: black;
+}
+
