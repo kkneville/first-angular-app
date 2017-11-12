@@ -62,15 +62,16 @@
   <span *ngIf="!password.valid">Password is required</span>
   <br>
 
-<!-- 
+
   <input 
     type="text" 
     name="passwordconfirm" 
     placeholder="Password Confirm"
     required 
+    [(ngModel)]="member.passwordconfirm"
+    #passwordconfirm='ngModel'
   />
-  <span *ngIf="!formData.passwordconfirm.value == member.password">Passwords must match</span> -->
-
+  <span *ngIf="!(member.password == member.passwordconfirm)">Passwords must match</span>
   <br>
    
    <input 
@@ -99,6 +100,7 @@
    <input 
     type="text" 
     name="city" 
+    placeholder="City"
     required 
     minlength="4" 
     maxlength="24"
@@ -120,8 +122,9 @@
    type="radio" 
    name="bool"
    value='true'
-   required
-  /> Email me. | 
+   checked="checked"
+  /> Email me. 
+  <br>
   
   <input 
    type="radio" 
@@ -155,26 +158,26 @@
 
 <form (submit)="onSubmit()">
   
-  <input type="text" name="firstname" 
+  <input type="text" name="first" 
   required
   minlength="4"
   maclength="24" 
-  [(ngModel)]='user.firstname' 
-  #firstname="ngModel">
-  {{ firstname.errors | json }}
-  {{ firstname.valid | json }}
-  <div *ngIf="!firstname.valid">Error First Name</div>
+  [(ngModel)]='user.first' 
+  #first="ngModel">
+  {{ first.errors | json }}
+  {{ first.valid | json }}
+  <div *ngIf="!first.valid">Error First Name</div>
   
 
-  <input type="text" name="lastname"
+  <input type="text" name="last"
   required
   minlength="4"
   maxlength="24" 
-  [(ngModel)]='user.lastname'
-  #lastname="ngModel">
-  {{ lastname.errors | json }}
-  {{ lastname.valid | json }}
-  <div *ngIf="!lastname.valid">Error Last Name</div>
+  [(ngModel)]='user.last'
+  #last="ngModel">
+  {{ last.errors | json }}
+  {{ last.valid | json }}
+  <div *ngIf="!last.valid">Error Last Name</div>
 
   <input type="submit" value='Submit'>
 
@@ -192,8 +195,8 @@
   </thead>
   <tbody>
     <tr *ngFor="let user of users">
-      <td>{{ user.firstname }}</td>
-      <td>{{ user.lastname }}</td>
+      <td>{{ user.first }}</td>
+      <td>{{ user.last }}</td>
       <td>{{ user.email }}</td>
     </tr>
   </tbody>    

@@ -2,6 +2,7 @@ import { Component, LOCALE_ID } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { Member } from './member';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -110,8 +111,8 @@ export class AppComponent {
 	}
 
 	user = {
-		firstname: "",
-		lastname: ""
+		first: "",
+		last: ""
 	}
 
 	users = []
@@ -150,7 +151,6 @@ export class AppComponent {
 		"Oregon",
 		"Washington"
 	]
-
 
 		
 }
